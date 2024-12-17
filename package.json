@@ -1,0 +1,16 @@
+{
+    "name": "com.tuantea.unityeventbus",
+    "displayName": "Unity Event Bus",
+    "description": "Unity Event Bus",
+    "version": "1.0.1",
+    "keywords": [
+      "EventBus"
+    ],
+    "category": "Event",
+    "dependencies": {},
+    "author": {
+      "name": "TuanTea",
+      "url": "https://github.com/tuantea"
+    },
+    "documentationUrl": "https://github.com/tuantea/Unity-Event-Bus/README.md"
+  }
