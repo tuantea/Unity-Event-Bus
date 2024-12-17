@@ -7,6 +7,8 @@ using UnityEngine;
 /// <summary>
 /// Contains methods and properties related to event buses and event types in the Unity application.
 /// </summary>
+
+namespace UnityUtils {
 public static class EventBusUtil {
     public static IReadOnlyList<Type> EventTypes { get; set; }
     public static IReadOnlyList<Type> EventBusTypes { get; set; }
@@ -74,4 +76,5 @@ public static class EventBusUtil {
             clearMethod?.Invoke(null, null);
         }
     }
+}
 }

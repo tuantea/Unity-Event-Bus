@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
-
-public static class EventBus<T> where T : IEvent {
-    static readonly HashSet<IEventBinding<T>> bindings = new HashSet<IEventBinding<T>>();
+namespace UnityUtils {
+        public static class EventBus<T> where T : IEvent {
+        static readonly HashSet<IEventBinding<T>> bindings = new HashSet<IEventBinding<T>>();
     
-    public static void Register(EventBinding<T> binding) => bindings.Add(binding);
-    public static void Deregister(EventBinding<T> binding) => bindings.Remove(binding);
+        public static void Register(EventBinding<T> binding) => bindings.Add(binding);
+        public static void Deregister(EventBinding<T> binding) => bindings.Remove(binding);
 
-    public static void Raise(T @event) {
+        public static void Raise(T @event) {
         var snapshot = new HashSet<IEventBinding<T>>(bindings);
 
         foreach (var binding in snapshot) {
@@ -22,4 +22,5 @@ public static class EventBus<T> where T : IEvent {
         Debug.Log($"Clearing {typeof(T).Name} bindings");
         bindings.Clear();
     }
+}
 }

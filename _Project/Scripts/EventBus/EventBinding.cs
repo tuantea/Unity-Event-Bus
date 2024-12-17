@@ -1,5 +1,6 @@
 ﻿using System;
 
+namespace UnityEventBus {
 public interface IEventBinding<T> {
     public Action<T> OnEvent { get; set; }
     public Action OnEventNoArgs { get; set; }
@@ -27,4 +28,5 @@ public class EventBinding<T> : IEventBinding<T> where T : IEvent {
     
     public void Add(Action<T> onEvent) => this.onEvent += onEvent;
     public void Remove(Action<T> onEvent) => this.onEvent -= onEvent;
+}
 }
